@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Tajada | Pizzería en Sullana</title>
+<meta name="description" content="Pizzas grandes, lasaña y postres hechos al momento en Sullana. Elige tu tajada y pide por WhatsApp.">
+<meta name="theme-color" content="#ff4100">
+<script>try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("fx")}catch(e){}</script>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&Bowlby+One&family=Archivo:wdth,wght@100..125,500..900&family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap">
+<style>
+:root{--or:#ff4100;--ye:#ffc700;--bl:#1573dd;--ch:#292a2c;--pk:#fdbeba;--cr:#fee3c1;--le:#f6e653;
+--disp:'Archivo Black','Bowlby One','Archivo Black',Impact,sans-serif;--ext:'Archivo',system-ui,sans-serif;--con:'Bebas Neue','Oswald',Impact,sans-serif;--body:'Open Sans',system-ui,sans-serif;
+--nav:46px;--g:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-inset-right,0px));--ease:cubic-bezier(.23,1,.32,1);color-scheme:light}
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--or);color:var(--ch);font:400 17px/1.5 var(--body);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--bl);outline-offset:3px}
+.sh{text-shadow:1px 1px 0 var(--or),2px 2px 0 var(--or),3px 3px 0 var(--or),4px 4px 0 var(--or),5px 5px 0 var(--or),6px 6px 0 var(--or)}
+.d{font-family:var(--disp);line-height:.89;letter-spacing:-.01em;font-weight:400}
+
+/* nav */
+.nav{position:fixed;z-index:100;top:0;left:0;right:0;height:var(--nav);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 var(--gr) 0 var(--g);background:var(--or);color:var(--ye);font:900 12px/1 var(--ext);font-stretch:125%;letter-spacing:-.01em;text-transform:uppercase;transition:background-color .4s,color .4s}
+.nav.y{background:var(--ye);color:var(--or)}
+.nav a{display:inline-flex;align-items:center;gap:8px;text-decoration:underline;text-underline-offset:3px}
+.nav .r{justify-self:end}
+.nav .lg{font:400 20px/1 var(--disp);text-decoration:none;color:inherit;letter-spacing:-.04em}
+.nav .lg i{font-style:normal;display:inline-block;background:var(--ye);color:var(--or);padding:2px 6px;margin-right:2px;transition:background-color .4s,color .4s}
+.nav.y .lg i{background:var(--or);color:var(--ye)}
+.nav svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2}
+@media(max-width:560px){.nav a span{display:none}}
+
+/* hero */
+.pin{position:relative}
+.stick{position:sticky;top:0;height:100svh;overflow:hidden}
+#hero{height:240svh;background:var(--or)}
+#hero .stick{display:flex;flex-direction:column;justify-content:flex-start;padding-top:calc(var(--nav) + 2vh)}
+.hl{color:var(--ye);text-align:center;text-transform:uppercase;padding:0 2vw;transform:translate3d(0,calc(var(--hp,0)*-6vh),0) scale(calc(1 + var(--hp,0)*.05));transform-origin:50% 0;will-change:transform}
+.hl span{display:block;white-space:nowrap;line-height:.84;letter-spacing:-.045em;font-family:'Archivo Black',Impact,sans-serif}
+.hl .a{margin-bottom:.06em}
+.slice{position:absolute;left:50%;bottom:0;width:min(78vw,125vh);aspect-ratio:1.45/1;min-width:min(100vw,640px);transform:translate3d(-50%,calc((1 - var(--sl,1))*105%),0);will-change:transform}
+.slice img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;clip-path:polygon(0 24%,3% 17%,9% 11%,18% 6.500%,30% 3%,42% 1.200%,50% 1%,58% 1.200%,70% 3%,82% 6.500%,91% 11%,97% 17%,100% 24%,100% 100%,0 100%)}
+.zz{position:absolute;bottom:4vh;width:min(12vw,120px);opacity:calc(var(--sl,0)*1);transform:translate3d(0,calc((1 - var(--sl,0))*60px),0) rotate(var(--zr,0deg))}
+.zz.l{left:2vw}.zz.r{right:2vw;--zr:180deg}
+.zz path{fill:none;stroke:var(--ye);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);font:900 11px var(--ext);font-stretch:125%;color:var(--ye);text-transform:uppercase;letter-spacing:.06em;opacity:calc(1 - var(--hp,0)*5);z-index:3}
+
+/* secciones rosa */
+.sec{position:relative;overflow:clip}
+.pinkS{background:var(--pk);color:var(--or)}#about .stick{overflow:clip}
+.blob{position:absolute;z-index:0;fill:var(--cr);will-change:transform}
+.ico{position:absolute;z-index:2;will-change:transform}
+#about{height:260svh}
+#about .stick{display:grid;place-items:center;text-align:center;padding:calc(var(--nav) + 20px) var(--gr) 20px var(--g)}
+.abt{position:relative;z-index:3;max-width:1100px}
+.big3{font-size:min(10.5vw,15vh);color:var(--ye)}
+.big3 .w{display:inline-block;white-space:nowrap;margin:0 .12em}
+.big3 .ch{display:inline-block;will-change:transform}
+.abt p{max-width:46ch;margin:3vh auto 0;font:600 15px/1.5 var(--ext);font-stretch:112%;color:var(--or);letter-spacing:-.01em}
+.burst{position:relative;display:inline-grid;place-items:center;width:clamp(108px,14vw,148px);aspect-ratio:1;color:var(--or);font:400 22px/.95 var(--con);letter-spacing:.02em;text-align:center;margin-top:3vh;transition:transform .5s var(--ease)}
+.burst svg{position:absolute;inset:0;width:100%;height:100%;fill:var(--ye);transform:rotate(var(--rot,0deg));transition:transform .6s var(--ease)}
+.burst span{position:relative;max-width:76%}
+@media(hover:hover){.burst:hover{transform:scale(1.1)}.burst:hover svg{transform:rotate(calc(var(--rot,0deg) + 30deg))}}
+.burst.or svg{fill:var(--or)}.burst.or{color:var(--ye)}
+
+/* bandas */
+.band{position:relative;z-index:6;background:var(--ye);color:var(--or);overflow:hidden;white-space:nowrap;border-block:2px solid var(--or);height:34px;display:flex;align-items:center}
+.band .mq{display:flex;gap:18px;padding-left:18px;font:900 15px/1 var(--ext);font-stretch:125%;letter-spacing:-.01em;text-transform:uppercase;transform:translate3d(var(--mx,0px),0,0);will-change:transform}
+.band .mq span{display:inline-flex;align-items:center;gap:18px}
+.band .mq i{width:11px;height:11px;border-radius:50%;background:var(--or);box-shadow:0 0 0 3px var(--ye),0 0 0 4px var(--or);display:inline-block}
+
+/* foto grande con zoom */
+.zoomS{height:240svh;background:#111}
+.zoomS .stick{background:#111}
+.zoomS img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(calc(1.35 - var(--zp,0)*.35)) translate3d(0,calc((.5 - var(--zp,0))*8vh),0);will-change:transform}
+.zoomS .cap{position:absolute;left:var(--g);right:var(--gr);bottom:9vh;color:var(--ye);z-index:2}
+.zoomS .cap .d{font-size:min(12vw,18vh);transform:translate3d(0,calc((1 - var(--cp,0))*40%),0);opacity:var(--cp,0)}
+.zoomS .cap p{font:600 16px/1.4 var(--ext);color:#fff;max-width:36ch;margin-top:12px;opacity:var(--cp,0)}
+.zoomS .band{position:absolute;left:0;right:0;top:var(--nav)}
+.zoomS::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.45),transparent 50%);pointer-events:none}
+
+/* franja amarilla */
+.strip{background:var(--ye);color:var(--or);padding:46px var(--gr) 46px var(--g);position:relative;z-index:3}
+.strip ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;max-width:1200px;margin:0 auto}
+.strip li{font:400 clamp(24px,3.4vw,38px)/.95 var(--disp)}
+.strip li small{display:block;font:600 13px/1.4 var(--ext);font-stretch:112%;color:var(--ch);margin-top:8px;letter-spacing:0}
+
+/* los más pedidos */
+#fame{background:var(--pk);color:var(--or);padding:110px var(--gr) 120px var(--g);text-align:center;position:relative;overflow:clip}
+#fame h2{font-size:clamp(46px,8vw,104px);color:var(--ye);position:relative;z-index:3}
+.fm{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,3vw,50px);max-width:1200px;margin:6vh auto 0;position:relative;z-index:3}
+.fm figure{position:relative;margin:0}
+.star{position:relative;aspect-ratio:1;display:block;width:100%;transform:rotate(var(--rot,0deg))}
+.star .bgs{position:absolute;inset:0;width:100%;height:100%;fill:var(--ye)}
+.star .pic{position:absolute;inset:11%;clip-path:circle(50%);overflow:hidden;transform:rotate(calc(var(--rot,0deg)*-1))}
+.star .pic img{width:100%;height:100%;object-fit:cover}
+.fm figcaption{font:400 clamp(15px,2vw,24px)/1 var(--disp);margin-top:18px}
+.fm figcaption small{display:block;font:700 13px var(--ext);font-stretch:112%;margin-top:6px;color:var(--ch)}
+.fm .add{margin-top:12px;display:inline-block;border:2px solid var(--bl);padding:6px 14px;font:400 20px/1 var(--con);letter-spacing:.04em;color:var(--ch);transition:background-color .2s,color .2s}
+@media(hover:hover){.fm .add:hover{background:var(--bl);color:#fff}}
+.hand{position:absolute;top:56%;width:clamp(34px,5vw,64px);z-index:3}
+.hand.l{left:2vw;animation:ptl 1.4s ease-in-out infinite}.hand.r{right:2vw;transform:scaleX(-1);animation:ptr 1.4s ease-in-out infinite}
+@keyframes ptl{50%{transform:translateX(10px)}}@keyframes ptr{50%{transform:scaleX(-1) translateX(10px)}}
+@media(max-width:700px){.hand{display:none}.fm{grid-template-columns:1fr;max-width:340px}}
+
+/* patrón */
+#pat{height:100svh;background:var(--cr);position:relative;overflow:hidden}
+#pat .tile{position:absolute;inset:-30%;transform:rotate(-8deg);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='360' height='360'><g transform='translate(20 40) rotate(18)'><path d='M0 0 L120 0 Q130 6 120 16 L66 130 Z' fill='%23ffb347'/><path d='M0 0 L120 0 Q130 6 120 16 L0 10Z' fill='%23d9822b'/><circle cx='62' cy='34' r='11' fill='%23c0281c'/><circle cx='90' cy='30' r='8' fill='%23c0281c'/><circle cx='64' cy='66' r='9' fill='%23c0281c'/></g><g transform='translate(240 210) rotate(-160)'><path d='M0 0 L120 0 Q130 6 120 16 L66 130 Z' fill='%23ffd166'/><path d='M0 0 L120 0 Q130 6 120 16 L0 10Z' fill='%23d9822b'/><circle cx='56' cy='36' r='10' fill='%23d13a2c'/><circle cx='88' cy='32' r='8' fill='%23d13a2c'/><circle cx='60' cy='66' r='9' fill='%2377a94b'/></g><circle cx='200' cy='60' r='5' fill='none' stroke='%23e78ac3' stroke-width='3'/><circle cx='320' cy='120' r='5' fill='none' stroke='%23e78ac3' stroke-width='3'/><circle cx='60' cy='260' r='5' fill='none' stroke='%23e78ac3' stroke-width='3'/><circle cx='150' cy='330' r='5' fill='none' stroke='%23e78ac3' stroke-width='3'/></svg>");background-size:360px 360px;background-position:calc(var(--sc,0)*.35px) calc(var(--sc,0)*-.22px);will-change:background-position}
+#pat .msg{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 var(--g)}
+#pat .msg h2{background:var(--ye);color:var(--or);display:inline-block;padding:.1em .3em;font-size:clamp(34px,7vw,92px);transform:rotate(-2deg) scale(var(--ms,1))}
+
+/* carta online */
+#menu{background:var(--ye);color:var(--or);text-align:center;padding:130px var(--gr) 130px var(--g);position:relative;overflow:hidden}
+#menu h2{font-size:clamp(54px,9vw,128px);position:relative;z-index:3;color:var(--ye);text-shadow:1px 1px 0 var(--or),2px 2px 0 var(--or),3px 3px 0 var(--or),4px 4px 0 var(--or),5px 5px 0 var(--or),6px 6px 0 var(--or),7px 7px 0 var(--or),8px 8px 0 var(--or)}
+#menu h2 span{color:var(--ye);-webkit-text-stroke:0}
+#menu p{max-width:38ch;margin:3vh auto 0;font:600 15px/1.5 var(--ext);font-stretch:112%;position:relative;z-index:3}
+#menu .burst{z-index:3}
+.cols{position:absolute;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:6vh;z-index:1;width:clamp(46px,9vw,110px)}
+.cols.l{left:8vw}.cols.r{right:8vw}
+.cols svg{width:100%;will-change:transform}
+@media(max-width:700px){.cols.l{left:2vw}.cols.r{right:2vw}.cols{opacity:.55}}
+
+/* catering */
+#cat{background:var(--ye);color:var(--or);padding:90px var(--gr) 100px var(--g);position:relative;overflow:hidden}
+#cat .in{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:4vw;align-items:center}
+@media(max-width:800px){#cat .in{grid-template-columns:1fr;text-align:center}}
+#cat h2{font-size:clamp(50px,8vw,112px);color:var(--ye);display:flex;flex-wrap:wrap}
+#cat h2 .ch{display:inline-block;will-change:transform}
+#cat p{font:600 15px/1.5 var(--ext);font-stretch:112%;max-width:36ch;margin-top:20px}
+#cat .photo{position:relative;aspect-ratio:1/1;clip-path:polygon(8% 4%,40% 0,72% 6%,100% 18%,96% 52%,100% 82%,66% 98%,34% 94%,4% 100%,0 60%,5% 30%);transform:rotate(calc(var(--cp,0)*8deg - 4deg));background:var(--pk)}
+#cat .photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.15) translate3d(0,calc((var(--cp,.5) - .5)*-8%),0)}
+
+/* footer */
+footer.ft{background:var(--or);color:var(--ye);padding:70px var(--gr) 30px var(--g);position:relative;overflow:hidden}
+footer.ft .gg{font:400 clamp(60px,17vw,260px)/.85 var(--disp);letter-spacing:-.03em;color:var(--ye);transform:translate3d(0,calc((1 - var(--fp,1))*26%),0)}
+footer.ft .cl{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:26px;margin-top:40px;font:700 13px/1.5 var(--ext);font-stretch:112%;max-width:1100px}
+footer.ft h4{font:400 20px/1 var(--con);letter-spacing:.08em;margin-bottom:8px;color:#fff}
+footer.ft a{text-decoration:underline;text-underline-offset:3px}
+
+/* menú (ventana) */
+dialog.mn{border:0;padding:0;width:min(780px,calc(100vw - 16px));max-height:94svh;background:var(--cr);color:var(--ch);overflow:hidden;border-radius:0;box-shadow:8px 8px 0 var(--or)}
+dialog.mn::backdrop{background:rgba(41,42,44,.7)}
+.mn .hd{display:flex;justify-content:space-between;align-items:center;background:var(--or);color:var(--ye);padding:10px 16px}
+.mn .hd h3{font:400 28px/1 var(--disp)}
+.mn .hd button{font:400 22px/1 var(--con);letter-spacing:.06em;border:2px solid var(--ye);padding:4px 12px}
+.mn .bd{overflow:auto;max-height:calc(94svh - 56px - 190px);padding:6px 16px 10px}
+.mn .cat{font:400 24px/1 var(--disp);color:var(--or);margin:20px 0 8px}
+.it{display:grid;grid-template-columns:72px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-top:2px dotted rgba(41,42,44,.3)}
+.it img{width:72px;height:72px;object-fit:cover;background:var(--pk)}
+.it b{font:800 15px/1.2 var(--ext);font-stretch:112%;display:block}
+.it small{font:400 13px/1.35 var(--body);color:#5a4a42}
+.it .pr{font:400 22px/1 var(--con);color:var(--or);letter-spacing:.03em}
+.it .q{display:flex;align-items:center;gap:6px;margin-top:6px}
+.it .q button{width:30px;height:30px;border:2px solid var(--ch);font:900 16px/1 var(--ext)}
+.it .q span{min-width:20px;text-align:center;font:800 14px var(--ext)}
+.mn .ft{border-top:3px solid var(--ch);background:var(--ye);padding:12px 16px calc(14px + env(safe-area-inset-bottom));display:grid;gap:8px}
+.mn .tt{display:flex;justify-content:space-between;font:400 26px/1 var(--disp);color:var(--or)}
+.mn label{display:flex;gap:8px;align-items:flex-start;font:600 12px/1.4 var(--ext);cursor:pointer}
+.mn label input{margin-top:2px;accent-color:var(--or)}
+.mn label a{text-decoration:underline}
+.mn .go{display:block;text-align:center;background:var(--or);color:var(--ye);padding:12px;font:400 26px/1 var(--con);letter-spacing:.06em}
+.mn .go[aria-disabled=true]{background:#b9a77a;color:#6a5a35;pointer-events:none}
+@media(max-width:520px){.it{grid-template-columns:56px 1fr auto}.it img{width:56px;height:56px}}
+.bagFab{position:fixed;right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));z-index:99;background:var(--ch);color:var(--ye);font:400 22px/1 var(--con);letter-spacing:.06em;padding:12px 18px;box-shadow:4px 4px 0 var(--or);display:none}
+.bagFab.on{display:block}
+html.noscroll{overflow:hidden}
+
+/* animaciones solo con html.fx */
+.fx .ico{transform:translate3d(0,var(--py,0px),0) rotate(var(--rt,0deg))}
+.fx .blob{transform:translate3d(0,var(--py,0px),0) rotate(var(--rt,0deg))}
+.fx .rvx{opacity:0;transform:translate3d(0,50px,0);transition:opacity .8s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0ms)}
+.fx .rvx.in{opacity:1;transform:none}
+.fx #fame .star{transition:transform .8s var(--ease)}
+.fx .cols svg{transform:translate3d(0,var(--py,0px),0) rotate(var(--rt,0deg))}
+.fx .band .mq{animation:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+html:not(.fx) #hero,html:not(.fx) #about,html:not(.fx) .zoomS{height:auto}
+html:not(.fx) .stick{position:relative;height:auto;min-height:100svh}
+html:not(.fx) .slice{position:relative;transform:translateX(-50%) ;left:50%;margin-top:4vh;bottom:auto}
+html:not(.fx) .ch{transform:none!important}
+html:not(.fx) .band .mq{overflow:hidden}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><clipPath id="sliceClip" clipPathUnits="objectBoundingBox"><path d="M0.5,0.995 C0.46,0.93 0.03,0.30 0.012,0.24 C0.0,0.19 0.02,0.15 0.07,0.12 C0.22,0.05 0.36,0.02 0.5,0.02 C0.64,0.02 0.78,0.05 0.93,0.12 C0.98,0.15 1.0,0.19 0.988,0.24 C0.97,0.30 0.54,0.93 0.5,0.995 Z"/></clipPath></defs></svg>
+
+<header class="nav" id="nav">
+  <a href="#carta"><span>Ver carta</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M9 8h5"/></svg></a>
+  <a class="lg" href="#" aria-label="La Tajada, inicio"><i>LA</i>TAJADA</a>
+  <a class="r" href="#carta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.300-4.200A8 8 0 1 1 8.400 18.800z"/></svg><span>Pedir ahora</span></a>
+</header>
+
+<main>
+<section class="pin" id="hero" data-pin="hero" aria-label="Inicio">
+  <div class="stick">
+    <h1 class="hl" id="hl"><span class="a">Hogar de la gran</span><span class="b">Tajada</span></h1>
+    <svg class="zz l" viewBox="0 0 100 130" aria-hidden="true"><path d="M10 10l30 14-30 14 30 14-30 14 30 14-30 14"/></svg>
+    <svg class="zz r" viewBox="0 0 100 130" aria-hidden="true"><path d="M10 10l30 14-30 14 30 14-30 14 30 14-30 14"/></svg>
+    <div class="slice"><img id="sliceImg" alt="Una tajada grande de pizza de pepperoni" fetchpriority="high" onerror="this.remove()"></div>
+    <div class="hint">Baja por tu tajada</div>
+  </div>
+</section>
+
+<section class="sec pinkS pin" id="about" data-pin="about" aria-label="Quiénes somos">
+  <div class="stick">
+    <svg class="blob" id="b1" style="left:-14%;top:-10%;width:46%" viewBox="0 0 200 200" aria-hidden="true"><path d="M44 20c40-26 90-8 118 22s28 78-4 104-84 38-118 8S-8 54 44 20z"/></svg>
+    <svg class="blob" id="b2" style="right:-16%;bottom:-8%;width:52%" viewBox="0 0 200 200" aria-hidden="true"><path d="M30 40c30-34 100-30 134 6s20 90-20 112-90 14-122-14S0 72 30 40z"/></svg>
+    <svg class="ico" data-px="-.18" style="left:10%;top:40%;width:44px" viewBox="0 0 40 40" aria-hidden="true"><use href="#sl"/></svg>
+    <svg class="ico" data-px=".22" style="right:12%;top:20%;width:64px" viewBox="0 0 60 30" aria-hidden="true"><use href="#ro"/></svg>
+    <svg class="ico" data-px=".3" style="right:16%;bottom:14%;width:54px" viewBox="0 0 40 40" aria-hidden="true"><use href="#hd"/></svg>
+    <div class="abt">
+      <h2 class="d big3 sh" id="abtH" aria-label="Pizzas grandes, hechas al momento en Sullana">Pizzas grandes, hechas al momento en Sullana</h2>
+      <p>Masa fresca, queso de verdad y tajadas del tamaño de tu mano. Amasamos cada día y horneamos cuando pides, para que llegue caliente.</p>
+      <a class="burst" href="#carta" data-lg-menu><svg viewBox="0 0 100 100" class="stsvg" aria-hidden="true"></svg><span>PEDIR AHORA</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="zoomS pin" id="foto1" data-pin="z1" aria-label="Postres">
+  <div class="stick">
+    <img class="bg" id="z1img" alt="Donas bañadas en chocolate con confites" loading="lazy" onerror="this.remove()">
+    <div class="band" aria-hidden="true"><div class="mq"></div></div>
+    <div class="cap"><div class="d">Tajadas dulces</div><p>Donas, crepes y helados para cerrar la comida. También se piden por WhatsApp.</p></div>
+  </div>
+</section>
+
+<div class="strip"><ul>
+  <li class="rvx">Horno caliente<small>Cada pizza sale al momento, no de la vitrina.</small></li>
+  <li class="rvx" style="--d:120ms">Delivery en Sullana<small>Te avisamos por WhatsApp cuando salga tu pedido.</small></li>
+  <li class="rvx" style="--d:240ms">Pago fácil<small>Yape, efectivo o transferencia al confirmar.</small></li>
+</ul></div>
+
+<section id="fame" aria-label="Los más pedidos">
+  <svg class="blob" id="b3" style="left:-12%;top:-4%;width:44%" viewBox="0 0 200 200" aria-hidden="true"><path d="M44 20c40-26 90-8 118 22s28 78-4 104-84 38-118 8S-8 54 44 20z"/></svg>
+  <svg class="blob" id="b4" style="right:-14%;bottom:-6%;width:48%" viewBox="0 0 200 200" aria-hidden="true"><path d="M30 40c30-34 100-30 134 6s20 90-20 112-90 14-122-14S0 72 30 40z"/></svg>
+  <h2 class="d sh rvx">Los más pedidos</h2>
+  <svg class="hand l" viewBox="0 0 40 40" aria-hidden="true"><use href="#hd"/></svg>
+  <svg class="hand r" viewBox="0 0 40 40" aria-hidden="true"><use href="#hd"/></svg>
+  <div class="fm" id="fm"></div>
+</section>
+
+<div class="band" aria-hidden="true"><div class="mq"></div></div>
+
+<section id="pat" aria-label="Interludio"><div class="tile" id="tile"></div><div class="msg"><h2 class="d" id="patH">Elige tu tajada</h2></div></section>
+
+<section id="menu" aria-label="Carta online">
+  <div class="cols l" aria-hidden="true"><svg viewBox="0 0 40 40" data-px="-.12"><use href="#sl2"/></svg><svg viewBox="0 0 40 40" data-px=".1"><use href="#sl2"/></svg><svg viewBox="0 0 40 40" data-px="-.2"><use href="#sl2"/></svg></div>
+  <div class="cols r" aria-hidden="true"><svg viewBox="0 0 40 40" data-px=".14"><use href="#sl2"/></svg><svg viewBox="0 0 40 40" data-px="-.1"><use href="#sl2"/></svg><svg viewBox="0 0 40 40" data-px=".2"><use href="#sl2"/></svg></div>
+  <h2 class="d rvx" id="carta">Carta<br>online</h2>
+  <p class="rvx">Elige entre pizzas, lasaña, pasta y postres. Arma tu pedido y envíalo por WhatsApp. Tú pagas al confirmar.</p>
+  <a class="burst or" href="#carta" id="openMenu" role="button"><svg viewBox="0 0 100 100" class="stsvg" aria-hidden="true"></svg><span>VER CARTA</span></a>
+</section>
+
+<section class="zoomS pin" id="foto2" data-pin="z2" aria-label="Pastelería">
+  <div class="stick">
+    <img class="bg" id="z2img" alt="Masitas y tartaletas de fruta" loading="lazy" onerror="this.remove()">
+    <div class="band" aria-hidden="true"><div class="mq"></div></div>
+    <div class="cap"><div class="d">Todo hecho aquí</div><p>Masa, salsa y postres de la casa, preparados cada día en Sullana.</p></div>
+  </div>
+</section>
+
+<section id="cat" aria-label="Eventos"><div class="in">
+  <div><h2 class="d sh" id="catH" aria-label="Eventos">Eventos</h2><p class="rvx">¿Cumpleaños, reunión o fiesta de la oficina? Te armamos bandejas de pizza, lasaña y postres. Cuéntanos cuántos son y te cotizamos.</p>
+  <a class="burst or" href="#" id="quote"><svg viewBox="0 0 100 100" class="stsvg" aria-hidden="true"></svg><span>PEDIR COTIZACIÓN</span></a></div>
+  <div class="photo" id="catPh"><img id="catImg" alt="Lasaña con salsa y queso" loading="lazy" onerror="this.remove()"></div>
+</div></section>
+
+<footer class="ft" id="ft">
+  <div class="gg" aria-hidden="true">LA<br>TAJADA</div>
+  <div class="cl">
+    <div><h4>Dónde estamos</h4>[Dirección del local], Sullana, Piura</div>
+    <div><h4>Horario</h4>Lun a dom, 12:00 a 23:00<br>[Ajustar horario real]</div>
+    <div><h4>Pedidos</h4><a id="waF" href="#" target="_blank" rel="noopener">WhatsApp +51 941 614 879</a></div>
+  </div>
+</footer>
+</main>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <g id="sl"><path d="M4 4h32q3 1 2 4L22 36z" fill="#ffc700"/><path d="M4 4h32q3 1 2 4L4 8z" fill="#d58a1c"/><circle cx="19" cy="14" r="3.400" fill="#ff4100"/><circle cx="27" cy="12" r="2.400" fill="#ff4100"/><circle cx="21" cy="23" r="2.600" fill="#ff4100"/></g>
+  <g id="sl2"><path d="M4 4h32q3 1 2 4L22 36z" fill="#ff4100"/><path d="M4 4h32q3 1 2 4L4 8z" fill="#c23200"/><circle cx="19" cy="14" r="3.400" fill="#ffc700"/><circle cx="27" cy="12" r="2.400" fill="#ffc700"/><circle cx="21" cy="23" r="2.600" fill="#ffc700"/></g>
+  <g id="ro"><path d="M4 10c6-8 40-10 50-2 4 4 2 12-4 14-12 4-38 2-46-6z" fill="#ffc700" stroke="#ff4100" stroke-width="2"/><path d="M12 11c8 2 12 6 14 12M24 9c8 2 12 6 14 13" stroke="#d58a1c" stroke-width="2" fill="none"/></g>
+  <g id="hd"><path d="M5 22h16l4-8h8q4 0 4 4t-4 4h-6l-2 10H5z" fill="#ffc700" stroke="#292a2c" stroke-width="1.800" stroke-linejoin="round"/><path d="M5 22v12" stroke="#292a2c" stroke-width="1.800"/></g>
+</defs></svg>
+
+<button class="bagFab" id="fab" aria-label="Abrir tu pedido"></button>
+
+<dialog class="mn" id="mn" aria-labelledby="mnT">
+  <div class="hd"><h3 id="mnT">Carta</h3><button id="mnX">CERRAR</button></div>
+  <div class="bd" id="mnB"></div>
+  <div class="ft">
+    <div class="tt"><span>Total</span><span id="mnTot">S/ 0</span></div>
+    <label><input type="checkbox" id="mnOk"><span>Acepto la <a href="#politica-de-privacidad" data-lg="priv">Política de privacidad</a>. No se cobra nada aquí; el pago se coordina por WhatsApp.</span></label>
+    <a class="go" id="mnGo" href="#" target="_blank" rel="noopener" aria-disabled="true">ENVIAR PEDIDO POR WHATSAPP</a>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var WA = '51941614879', NOMBRE = 'La Tajada';
+  var U = 'https://images.unsplash.com/photo-';
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var img = function (id, w) { return U + id + '?auto=format&fit=crop&q=70&w=' + w; };
+  var money = function (n) { return 'S/ ' + n; };
+  var FX = document.documentElement.classList.contains('fx');
+  var cl = function (v) { return Math.max(0, Math.min(1, v)); };
+  var ease = function (t) { return 1 - Math.pow(1 - t, 3); };
+
+  var MENU = [
+    ['Pizzas', [
+      { n: 'Pepperoni', d: 'Salsa de la casa, mozzarella y pepperoni.', p: 39, i: '1534308983496-4fabb1a015ee' },
+      { n: 'Margarita', d: 'Mozzarella fresca, albahaca y salsa de tomate.', p: 35, i: '1574071318508-1cdbab80d002' },
+      { n: 'Cuatro quesos', d: 'Mozzarella, parmesano y dos quesos más, con espinaca.', p: 42, i: '1593560708920-61dd98c46a4e' },
+      { n: 'Criolla', d: 'Tomate, cebolla, ají y queso, a nuestro estilo.', p: 45, i: '1590947132387-155cc02f3212' },
+      { n: 'Vegetariana', d: 'Pimiento, aceituna, tomate y albahaca.', p: 38, i: '1585238342024-78d387f4a707' }
+    ]],
+    ['Pastas', [
+      { n: 'Lasaña de carne', d: 'Capas de pasta, carne, salsa y queso gratinado.', p: 28, i: '1619895092538-128341789043' },
+      { n: 'Penne a la boloñesa', d: 'Pasta corta con salsa de carne.', p: 26, i: '1621996346565-e3dbc646d9a9' }
+    ]],
+    ['Postres', [
+      { n: 'Donas con chocolate', d: 'Dos donas con chocolate y confites.', p: 15, i: '1551024601-bec78aea704b' },
+      { n: 'Crepes con fresa', d: 'Con crema y fresas frescas.', p: 18, i: '1587314168485-3236d6710814' },
+      { n: 'Helado de cono', d: 'Cono con helado del día.', p: 12, i: '1501443762994-82bd5dace89a' },
+      { n: 'Torta del día', d: 'Porción de torta de frutos rojos.', p: 16, i: '1565958011703-44f9829ba187' }
+    ]]
+  ];
+  var ITEMS = []; MENU.forEach(function (c) { c[1].forEach(function (x) { x.id = ITEMS.length; ITEMS.push(x); }); });
+  var FAME = [1, 5, 8];   /* pepperoni... por id */
+  FAME = [0, 5, 8];
+  var qty = {};
+
+  function fit(){ var W=innerWidth*0.96; $$('#hl span').forEach(function(e){ e.style.display='inline-block'; e.style.fontSize='100px'; e.style.fontSize=(100*W/e.getBoundingClientRect().width)+'px'; e.style.display='block'; }); }
+  fit(); addEventListener('resize',fit); if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
+  /* ---- imágenes ---- */
+  $('#sliceImg').src = img('1565299624946-b28f40a0ae38', 1600);
+  $('#z1img').src = img('1551024601-bec78aea704b', 1800);
+  $('#z2img').src = img('1495147466023-ac5c588e2e94', 1800);
+  $('#catImg').src = img('1619895092538-128341789043', 900);
+  $('#waF').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Hola ' + NOMBRE + ', quiero hacer un pedido.');
+  $('#quote').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Hola ' + NOMBRE + ', quiero cotizar bandejas para un evento. Somos ___ personas, la fecha es ___.');
+
+  /* ---- starbursts SVG ---- */
+  function star(n, ro, ri) { var p = []; for (var k = 0; k < n * 2; k++) { var a = Math.PI * k / n - Math.PI / 2, r = k % 2 ? ri : ro; p.push((50 + r * Math.cos(a)).toFixed(1) + ',' + (50 + r * Math.sin(a)).toFixed(1)); } return p.join(' '); }
+  $$('.stsvg').forEach(function (s) { s.innerHTML = '<polygon points="' + star(18, 49, 40) + '"/>'; });
+
+  /* ---- marquesinas ---- */
+  var TXT = ['Una tajada, por favor', 'Pizza al momento', 'Pide por WhatsApp', 'Sullana, Piura'];
+  var mqHTML = ''; for (var r = 0; r < 4; r++) TXT.forEach(function (t) { mqHTML += '<span>' + t + '<i></i></span>'; });
+  $$('.band .mq').forEach(function (m) { m.innerHTML = mqHTML + mqHTML; });
+
+  /* ---- letras que caen ---- */
+  function split(el) {
+    var txt = el.getAttribute('aria-label') || el.textContent, out = '', n = 0;
+    txt.split(' ').forEach(function (w) {
+      out += '<span class="w" aria-hidden="true">' + w.split('').map(function (c) { n++; return '<span class="ch">' + esc(c) + '</span>'; }).join('') + '</span> ';
+    });
+    el.innerHTML = out; return $$('.ch', el);
+  }
+  var seed = function (i) { var x = Math.sin(i * 12.9898) * 43758.5453; return x - Math.floor(x); };
+  var abtL = split($('#abtH')), catL = split($('#catH'));
+
+  /* ---- fama ---- */
+  $('#fm').innerHTML = FAME.map(function (id, k) {
+    var x = ITEMS[id];
+    return '<figure class="rvx" style="--d:' + (k * 140) + 'ms"><div class="star" data-k="' + k + '"><svg class="bgs" viewBox="0 0 100 100" aria-hidden="true"><polygon points="' + star(20, 49.500, 42) + '"/></svg><div class="pic"><img src="' + img(x.i, 600) + '" alt="' + esc(x.n) + '" loading="lazy" onerror="this.remove()"></div></div>' +
+      '<figcaption>' + esc(x.n) + '<small>' + money(x.p) + '</small><button class="add" data-add="' + id + '">AGREGAR</button></figcaption></figure>';
+  }).join('');
+
+  /* ---- menú / pedido ---- */
+  var mn = $('#mn'), fab = $('#fab');
+  $('#mnB').innerHTML = MENU.map(function (c) {
+    return '<div class="cat">' + c[0] + '</div>' + c[1].map(function (x) {
+      return '<div class="it"><img src="' + img(x.i, 200) + '" alt="" loading="lazy" onerror="this.remove()"><div><b>' + esc(x.n) + '</b><small>' + esc(x.d) + '</small><div class="q"><button data-d="-1" data-id="' + x.id + '" aria-label="Quitar uno">−</button><span id="q' + x.id + '">0</span><button data-d="1" data-id="' + x.id + '" aria-label="Agregar uno">+</button></div></div><div class="pr">' + money(x.p) + '</div></div>';
+    }).join('');
+  }).join('');
+  function bump(id, d) { qty[id] = Math.max(0, (qty[id] || 0) + d); draw(); }
+  function draw() {
+    var tot = 0, n = 0, msg = [];
+    ITEMS.forEach(function (x) { var q = qty[x.id] || 0, e = $('#q' + x.id); if (e) e.textContent = q; if (q) { tot += q * x.p; n += q; msg.push('• ' + q + ' × ' + x.n + ' — ' + money(q * x.p)); } });
+    $('#mnTot').textContent = money(tot);
+    fab.textContent = 'MI PEDIDO · ' + n; fab.classList.toggle('on', n > 0);
+    var go = $('#mnGo');
+    if (!n || !$('#mnOk').checked) { go.setAttribute('aria-disabled', 'true'); go.href = '#'; }
+    else { go.removeAttribute('aria-disabled'); go.href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Hola ' + NOMBRE + ', quiero hacer este pedido:\n\n' + msg.join('\n') + '\n\nTotal: ' + money(tot) + '\n\nMi nombre: \nDirección o distrito: '); }
+  }
+  function openMenu() { if (!mn.open) { mn.showModal(); document.documentElement.classList.add('noscroll'); } }
+  mn.addEventListener('close', function () { document.documentElement.classList.remove('noscroll'); });
+  $('#mnX').addEventListener('click', function () { mn.close(); });
+  mn.addEventListener('click', function (e) { if (e.target === mn) mn.close(); });
+  $('#mnB').addEventListener('click', function (e) { var b = e.target.closest('button[data-id]'); if (b) bump(+b.dataset.id, +b.dataset.d); });
+  $('#mnOk').addEventListener('change', draw);
+  fab.addEventListener('click', openMenu);
+  $('#openMenu').addEventListener('click', function (e) { e.preventDefault(); openMenu(); });
+  $$('[data-lg-menu]').forEach(function (a) { a.addEventListener('click', function (e) { e.preventDefault(); openMenu(); }); });
+  $$('.nav a[href="#carta"]').forEach(function (a) { a.addEventListener('click', function (e) { e.preventDefault(); openMenu(); }); });
+  document.addEventListener('click', function (e) { var a = e.target.closest('[data-add]'); if (a) { bump(+a.dataset.add, 1); a.textContent = 'AGREGADA ✓'; setTimeout(function () { a.textContent = 'AGREGAR'; }, 1400); } });
+  draw();
+
+  /* ---- animación con scroll ---- */
+  if (!FX) return;
+  var nav = $('#nav'), pins = $$('[data-pin]'), px = $$('[data-px]'), mqs = $$('.band .mq'), tile = $('#tile'), hero = $('#hero');
+  var about = $('#about'), foot = $('#ft'), vh = innerHeight, t0 = performance.now();
+  var io = new IntersectionObserver(function (en) { var n = 0; en.forEach(function (x) { if (!x.isIntersecting) return; x.target.style.setProperty('--d', (n++ * 110) + 'ms'); x.target.classList.add('in'); io.unobserve(x.target); }); }, { rootMargin: '0px 0px -8% 0px', threshold: .1 });
+  $$('.rvx').forEach(function (e) { io.observe(e); });
+  var blobs = $$('.blob');
+  function prog(el) { var r = el.getBoundingClientRect(); return cl(-r.top / Math.max(1, r.height - vh)); }
+  function frame(now) {
+    vh = innerHeight; var y = scrollY;
+    /* hero */
+    var hp = prog(hero); hero.style.setProperty('--hp', hp.toFixed(3));
+    hero.style.setProperty('--sl', ease(cl((hp - .08) / .62)).toFixed(3));
+    /* about: letras */
+    var ap = prog(about), N = abtL.length;
+    abtL.forEach(function (c, i) {
+      var t = ease(cl((ap * 1.5 - (i / N) * .55) / .45)), s1 = seed(i + 1), s2 = seed(i + 77);
+      c.style.transform = 'translate3d(' + ((s1 - .5) * 70 * (1 - t)).toFixed(1) + 'vw,' + (-(25 + s2 * 55) * (1 - t)).toFixed(1) + 'vh,0) rotate(' + ((s1 - .5) * 200 * (1 - t)).toFixed(1) + 'deg)';
+      c.style.opacity = t > .02 ? 1 : 0;
+    });
+    /* zoom */
+    pins.forEach(function (p) {
+      if (!p.classList.contains('zoomS')) return;
+      var zp = prog(p); p.style.setProperty('--zp', zp.toFixed(3)); p.style.setProperty('--cp', ease(cl((zp - .35) / .4)).toFixed(3));
+    });
+    /* catering */
+    var ce = $('#cat'), cr = ce.getBoundingClientRect(), cp = cl((vh - cr.top) / (cr.height + vh * .3));
+    ce.style.setProperty('--cp', cp.toFixed(3));
+    var cN = catL.length;
+    catL.forEach(function (c, i) { var t = ease(cl((cp * 2.2 - .35 - i * .08) / .5)); c.style.transform = 'translate3d(0,' + ((1 - t) * -80 + (i % 2 ? 14 : 0) * t).toFixed(1) + 'px,0) rotate(' + ((1 - t) * (i % 2 ? 14 : -14)).toFixed(1) + 'deg)'; c.style.opacity = t > .02 ? 1 : 0; });
+    /* nav */
+    nav.classList.toggle('y', about.getBoundingClientRect().top < vh * .35);
+    /* parallax */
+    px.forEach(function (e) { var r = (e.parentNode.getBoundingClientRect ? e.parentNode : e).getBoundingClientRect(); if (r.bottom < -300 || r.top > vh + 300) return; var d = r.top + r.height / 2 - vh / 2; e.style.setProperty('--py', (-d * parseFloat(e.dataset.px)).toFixed(1) + 'px'); e.style.setProperty('--rt', (d * parseFloat(e.dataset.px) * .12).toFixed(1) + 'deg'); });
+    blobs.forEach(function (b, i) { var r = b.parentNode.getBoundingClientRect(); if (r.bottom < -300 || r.top > vh + 300) return; var d = r.top + r.height / 2 - vh / 2; b.style.setProperty('--py', (-d * (i % 2 ? .12 : -.1)).toFixed(1) + 'px'); b.style.setProperty('--rt', (d * .02 * (i % 2 ? 1 : -1)).toFixed(1) + 'deg'); });
+    /* estrellas giran */
+    $$('.star').forEach(function (s) { var r = s.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return; s.style.setProperty('--rot', ((r.top - vh / 2) * .06 * (s.dataset.k % 2 ? -1 : 1)).toFixed(1) + 'deg'); });
+    $$('.burst').forEach(function (s) { s.style.setProperty('--rot', (y * .05).toFixed(1) + 'deg'); });
+    /* patrón */
+    var pr = $('#pat').getBoundingClientRect(); document.documentElement.style.setProperty('--sc', (y).toFixed(0));
+    $('#pat').style.setProperty('--ms', (.9 + ease(cl((vh - pr.top) / vh)) * .1).toFixed(3));
+    /* marquesinas: se mueven con el scroll */
+    mqs.forEach(function (m) { var half = m.scrollWidth / 2; if (!half) return; var r = m.parentNode.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return; m.style.setProperty('--mx', (-((((y * .6 + (now - t0) * .03) % half) + half) % half)).toFixed(1) + 'px'); });
+    /* pie */
+    foot.style.setProperty('--fp', cl((vh - foot.getBoundingClientRect().top) / (foot.offsetHeight)).toFixed(3));
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+
+<!-- LEGAL:INICIO -->
+<style>
+/* ===== Legal: libro de reclamaciones y política de privacidad ===== */
+.lg-bar{background:#292a2c;color:#ffc700;border-top:1px solid rgba(41,42,44,.25);padding:18px max(16px,env(safe-area-inset-right)) calc(18px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));font:400 13px/1.4 'Open Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;justify-content:center;text-align:center;position:relative;z-index:5}
+.lg-bar span{opacity:.75}
+.lg-bar button{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:7px;color:inherit;font:500 13px/1.4 'Open Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(41,42,44,.25);transition:text-decoration-color .3s,color .3s}
+.lg-bar button:hover,.lg-bar button:focus-visible{text-decoration-color:currentColor}
+.lg-bar button:focus-visible{outline:2px solid #ff4100;outline-offset:4px;border-radius:3px}
+.lg-bar svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+dialog.lg{border:1px solid rgba(41,42,44,.25);padding:0;width:min(760px,calc(100vw - 24px));max-height:min(88vh,88svh);background:#fee3c1;color:#292a2c;border-radius:0px;font:400 15px/1.6 'Open Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;letter-spacing:normal;text-transform:none;overflow:hidden}
+dialog.lg[open]{display:flex;flex-direction:column}
+dialog.lg::backdrop{background:rgba(0,0,0,.62)}
+.lg-h{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 22px;border-bottom:1px solid rgba(41,42,44,.25);flex:none}
+.lg-h h2{margin:0;font:600 18px/1.25 'Open Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;letter-spacing:normal;text-transform:none;color:#292a2c}
+.lg-x{all:unset;cursor:pointer;width:36px;height:36px;display:grid;place-items:center;border-radius:50%;color:#292a2c;flex:none}
+.lg-x:hover{background:rgba(41,42,44,.06)}
+.lg-x:focus-visible{outline:2px solid #ff4100}
+.lg-x svg{width:18px;height:18px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round}
+.lg-b{overflow-y:auto;padding:20px 22px 28px;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.lg-b h3{margin:26px 0 6px;font:600 15px/1.3 'Open Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#292a2c;letter-spacing:normal;text-transform:none}
+.lg-b h3:first-child{margin-top:0}
+.lg-b p,.lg-b li{margin:0 0 8px;color:#5a4a42;font-size:14.5px;line-height:1.6}
+.lg-b ul{margin:0 0 8px;padding-left:20px}
+.lg-b strong{color:#292a2c;font-weight:600}
+.lg-b a{color:#ff4100;text-underline-offset:3px}
+.lg-fill{background:rgba(41,42,44,.06);border-radius:3px;padding:0 5px;color:#292a2c;white-space:nowrap}
+.lg-note{border:1px solid rgba(41,42,44,.25);border-radius:0px;padding:12px 14px;margin:0 0 18px;background:rgba(41,42,44,.06)}
+.lg-note p{margin:0;color:#5a4a42;font-size:13.5px}
+dialog.lg #lg-form{display:block;grid-template-columns:none;grid-column:auto;gap:0;margin:0;padding:0;max-width:none;width:auto;background:none;border:0;box-shadow:none}
+dialog.lg .lg-b fieldset{display:block;grid-template-columns:none;grid-column:auto;gap:0;border:0;margin:0 0 6px;padding:0;min-width:0;width:auto}
+dialog.lg .lg-b legend{float:none;width:auto}
+dialog.lg .lg-b label,dialog.lg .lg-b p,dialog.lg .lg-b li,dialog.lg .lg-b h3{text-transform:none;letter-spacing:normal}
+.lg-b legend{font:600 15px/1.3 'Open Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#292a2c;padding:0;margin:22px 0 10px}
+.lg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.lg-b label{display:block;font:500 13px/1.3 'Open Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#292a2c;margin:0 0 5px}
+.lg-b input,.lg-b select,.lg-b textarea{width:100%;box-sizing:border-box;background:#fee3c1;color:#292a2c;border:1px solid rgba(41,42,44,.25);border-radius:0px;padding:10px 12px;font:400 15px/1.4 'Open Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;letter-spacing:normal;text-transform:none;margin:0 0 12px}
+.lg-b textarea{min-height:92px;resize:vertical}
+.lg-b input:focus,.lg-b select:focus,.lg-b textarea:focus{outline:2px solid #ff4100;outline-offset:1px;border-color:transparent}
+.lg-b .lg-opt{display:flex;gap:18px;flex-wrap:wrap;margin:0 0 12px}
+.lg-b .lg-opt label{display:flex;gap:8px;align-items:flex-start;font-weight:400;margin:0;cursor:pointer}
+.lg-b .lg-opt input{width:auto;margin:3px 0 0;accent-color:#ff4100}
+.lg-b .lg-chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;color:#5a4a42;font-size:13.5px;margin:0 0 10px;cursor:pointer}
+.lg-b .lg-chk input{width:auto;margin:3px 0 0;flex:none;accent-color:#ff4100}
+.lg-err{color:#e5736b;font-size:13.5px;min-height:20px;margin:6px 0 10px}
+.lg-go{all:unset;cursor:pointer;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;background:#ff4100;color:#ffc700;border-radius:0px;padding:12px 26px;font:600 14px/1 'Open Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;transition:opacity .3s,transform .3s}
+.lg-go:hover{opacity:.88}
+.lg-go:focus-visible{outline:2px solid #292a2c;outline-offset:3px}
+.lg-ghost{all:unset;cursor:pointer;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(41,42,44,.25);color:#292a2c;border-radius:0px;padding:11px 22px;font:500 14px/1 'Open Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.lg-ghost:hover{background:rgba(41,42,44,.06)}
+.lg-acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.lg-sum{white-space:pre-wrap;word-break:break-word;background:rgba(41,42,44,.06);border-radius:0px;padding:14px;font:400 13px/1.55 ui-monospace,Menlo,Consolas,monospace;color:#292a2c;margin:12px 0}
+.lg-num{font:600 22px/1.2 'Open Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#292a2c;margin:0 0 6px}
+@media(max-width:560px){.lg-row{grid-template-columns:1fr}.lg-h{padding:14px 16px}.lg-b{padding:16px 16px 24px}dialog.lg{width:calc(100vw - 16px);max-height:92svh}}
+html.lg-lock{overflow:hidden}
+@media(prefers-reduced-motion:no-preference){dialog.lg[open]{animation:lgin .35s cubic-bezier(.25,.46,.45,.94)}@keyframes lgin{from{opacity:0;transform:translateY(12px)}}}
+</style>
+<div class="lg-bar" role="contentinfo"><span>© 2026 La Tajada</span><button type="button" data-lg="rec"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h10M9 8h5"/></svg>Libro de Reclamaciones</button><button type="button" data-lg="priv"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Política de privacidad</button></div>
+<dialog class="lg" id="lg-priv" aria-labelledby="lg-pt" data-lenis-prevent><div class="lg-h"><h2 id="lg-pt">Política de privacidad</h2><button type="button" class="lg-x" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><div class="lg-b" data-lenis-prevent>
+<p class="lg-note"><strong>Resumen.</strong> Solo pedimos los datos necesarios para atenderte y no los vendemos. Cada vez que pidas algo se abrirá WhatsApp con tu mensaje listo: tú decides si lo envías.</p>
+<h3>1. Quién es responsable de tus datos</h3>
+<p>El titular del banco de datos personales es <span class="lg-fill">[Razón social]</span>, RUC <span class="lg-fill">[RUC]</span>, con domicilio en <span class="lg-fill">[Dirección del local]</span>. Contacto para temas de privacidad: <span class="lg-fill">[correo del negocio]</span> o <a class="lg-wa" href="#">WhatsApp</a>.</p>
+<h3>2. Qué datos recopilamos (reservas)</h3>
+<ul><li>Nombre</li><li>Número de personas</li><li>Fecha y hora de la reserva</li><li>El comentario que escribas (por ejemplo, una alergia o una celebración)</li><li>Tu número de WhatsApp, que el negocio ve cuando le llega el mensaje</li></ul><p>Si en tu comentario nos cuentas una alergia o una condición de salud, usamos esa información <strong>solo</strong> para atender tu reserva con seguridad.</p>
+<p>No pedimos datos de tarjetas ni claves bancarias en esta página.</p>
+<h3>3. Para qué los usamos</h3>
+<ul><li>Confirmar y atender tu reserva.</li><li>Contactarte por WhatsApp si hay algún cambio en tu reserva.</li><li>Responder tus consultas y los reclamos del Libro de Reclamaciones.</li></ul>
+<h3>4. Tu consentimiento</h3>
+<p>Tratamos tus datos con tu consentimiento libre, previo, expreso e informado, de acuerdo con la Ley N.° 29733, Ley de Protección de Datos Personales, y su reglamento (D.S. N.° 003-2013-JUS). Al enviar un formulario o un mensaje desde esta página, aceptas esta política. Puedes retirar tu consentimiento cuando quieras.</p>
+<h3>5. Con quién compartimos información</h3>
+<p>No vendemos ni alquilamos tus datos. Solo intervienen los servicios que hacen funcionar la página:</p>
+<ul><li><strong>WhatsApp (Meta Platforms)</strong>: cuando envías un pedido de reserva por WhatsApp, el mensaje viaja por esa aplicación y se rige también por sus políticas.</li><li><strong>Vercel</strong>: aloja esta página y puede registrar datos técnicos de la conexión (como la dirección IP) para que el sitio funcione y sea seguro.</li><li><strong>Google Fonts y Unsplash</strong> (o los servicios que se indiquen en el sitio): entregan tipografías e imágenes; al cargarlas, esos servicios reciben la dirección IP de tu dispositivo.</li></ul>
+<p>Podemos compartir datos con autoridades cuando una norma o una orden lo exija.</p>
+
+<h3>6. Cookies y almacenamiento en tu navegador</h3>
+<p>Esta página no guarda cookies de seguimiento. Para recordar tus preferencias de forma básica puede usar el almacenamiento del navegador; no contiene datos personales.</p>
+<h3>7. Cuánto tiempo los conservamos</h3>
+<p>Guardamos los datos de tu reserva mientras dure la atención y, después, el tiempo necesario para atender consultas o reclamos. Luego se eliminan.</p>
+<h3>8. Tus derechos</h3>
+<p>Puedes pedir en cualquier momento acceso, rectificación, cancelación u oposición sobre tus datos (derechos ARCO). Escríbenos por WhatsApp o a <span class="lg-fill">[correo del negocio]</span> indicando tu nombre y qué quieres hacer, y te respondemos dentro de los plazos de la ley. Si crees que no atendimos bien tu solicitud, puedes acudir a la Autoridad Nacional de Protección de Datos Personales (Ministerio de Justicia y Derechos Humanos).</p>
+<h3>9. Seguridad</h3>
+<p>Aplicamos medidas razonables para proteger tu información. Ningún sistema es 100 % seguro, por eso te recomendamos no escribir datos sensibles en los mensajes.</p>
+<h3>10. Menores de edad</h3>
+<p>Esta página no está dirigida a menores de 14 años. Si eres menor de edad, pide a tu madre, padre o apoderado que haga la solicitud.</p>
+<h3>11. Cambios en esta política</h3>
+<p>Si cambiamos esta política, publicaremos la nueva versión aquí con su fecha. Última actualización: 5 de noviembre de 2026.</p>
+</div></dialog>
+<dialog class="lg" id="lg-rec" aria-labelledby="lg-rt" data-lenis-prevent><div class="lg-h"><h2 id="lg-rt">Libro de Reclamaciones</h2><button type="button" class="lg-x" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><div class="lg-b" data-lenis-prevent>
+<p class="lg-note"><strong>Libro de Reclamaciones.</strong> Aquí puedes registrar un reclamo o una queja sobre el consumo o la reserva. Los campos marcados con * son obligatorios. Presentar un reclamo no te impide acudir al Indecopi ni a otras vías.</p>
+<form id="lg-form" novalidate>
+<fieldset><legend>1. Identificación del consumidor</legend>
+<label for="lg-n">Nombres y apellidos *</label><input id="lg-n" name="nombre" autocomplete="name" required>
+<div class="lg-row"><div><label for="lg-td">Tipo de documento *</label><select id="lg-td" name="td"><option>DNI</option><option>Carné de extranjería</option><option>Pasaporte</option><option>RUC</option></select></div>
+<div><label for="lg-nd">Número de documento *</label><input id="lg-nd" name="nd" inputmode="numeric" autocomplete="off" required></div></div>
+<label for="lg-dom">Domicilio *</label><input id="lg-dom" name="dom" autocomplete="street-address" required>
+<div class="lg-row"><div><label for="lg-tel">Teléfono *</label><input id="lg-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" required></div>
+<div><label for="lg-em">Correo electrónico *</label><input id="lg-em" name="em" type="email" autocomplete="email" required></div></div>
+<label for="lg-ap">Si eres menor de edad: nombre de tu madre, padre o apoderado</label><input id="lg-ap" name="ap" autocomplete="off">
+</fieldset>
+<fieldset><legend>2. Identificación del bien contratado</legend>
+<div class="lg-opt" role="radiogroup" aria-label="Tipo de bien"><label><input type="radio" name="bien" value="Producto" >Producto</label><label><input type="radio" name="bien" value="Servicio" checked>Servicio</label></div>
+<div class="lg-row"><div><label for="lg-mt">Monto reclamado (S/)</label><input id="lg-mt" name="monto" inputmode="decimal" placeholder="0.00"></div>
+<div><label for="lg-ds">Descripción del bien *</label><input id="lg-ds" name="desc" required></div></div>
+</fieldset>
+<fieldset><legend>3. Detalle del reclamo o la queja</legend>
+<div class="lg-opt" role="radiogroup" aria-label="Tipo de caso"><label><input type="radio" name="tipo" value="Reclamo" checked>Reclamo (no estoy conforme con el producto o servicio)</label><label><input type="radio" name="tipo" value="Queja">Queja (no estoy conforme con la atención)</label></div>
+<label for="lg-dt">Detalle *</label><textarea id="lg-dt" name="detalle" placeholder="Ej.: el plato llegó frío o la reserva no fue respetada" required></textarea>
+<label for="lg-pd">¿Qué solución pides? *</label><textarea id="lg-pd" name="pedido" required></textarea>
+</fieldset>
+<label class="lg-chk"><input type="checkbox" id="lg-ok" required><span>Declaro que los datos son verdaderos y acepto que se usen para atender este caso, según la <button type="button" class="lg-linkpriv" style="all:unset;cursor:pointer;color:#ff4100;text-decoration:underline;text-underline-offset:3px">Política de privacidad</button>. *</span></label>
+<p class="lg-err" id="lg-err" role="alert"></p>
+<button type="submit" class="lg-go">Registrar y generar mi hoja</button>
+</form>
+<div id="lg-done" hidden>
+<p class="lg-num" id="lg-num"></p>
+<p>Tu hoja está lista. Falta un paso: envíala al negocio por WhatsApp para que la reciba. Guarda una captura o copia el texto como constancia.</p>
+<pre class="lg-sum" id="lg-sum"></pre>
+<div class="lg-acts"><a class="lg-go" id="lg-send" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a><button type="button" class="lg-ghost" id="lg-copy">Copiar texto</button><button type="button" class="lg-ghost" id="lg-new">Registrar otro</button></div>
+<p style="margin-top:14px">El proveedor responde dentro del plazo que fija la normativa vigente. Datos del proveedor: <span class="lg-fill">[Razón social]</span>, RUC <span class="lg-fill">[RUC]</span>, <span class="lg-fill">[Dirección del local]</span>.</p>
+</div>
+</div></dialog>
+<script>
+(function(){
+  var CFG={wa:'51941614879',nombre:"La Tajada",razon:"[Razón social]",ruc:"[RUC]",dir:"[Dirección del local]",slug:'latajada'};
+  var d=document,$=function(s,r){return (r||d).querySelector(s)},$$=function(s,r){return [].slice.call((r||d).querySelectorAll(s))};
+  var P=$('#lg-priv'),R=$('#lg-rec'),root=d.documentElement;
+  if(!P||!R||typeof P.showModal!=='function'){ // navegador sin <dialog>: mostrar como bloques simples
+    $$('.lg-bar button[data-lg]').forEach(function(b){b.hidden=true});return;}
+  function show(x){ if(!x.open){x.showModal();root.classList.add('lg-lock');var b=$('.lg-b',x);if(b)b.scrollTop=0;} }
+  d.addEventListener('click',function(e){
+    var b=e.target.closest('[data-lg]');
+    if(b){var w=b.getAttribute('data-lg'),T=$('#lg-'+w);if(T&&T.tagName==='DIALOG'){e.preventDefault();$$('dialog.lg[open]').forEach(function(o){o.close()});show(T);return;}}
+    if(e.target.closest('.lg-linkpriv')){R.close();show(P);return;}
+    var x=e.target.closest('.lg-x');if(x){x.closest('dialog').close();return;}
+    if(e.target.tagName==='DIALOG'){var r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close();}
+  });
+  $$('dialog.lg').forEach(function(x){x.addEventListener('close',function(){if(!$('dialog.lg[open]'))root.classList.remove('lg-lock')})});
+  $$('.lg-wa').forEach(function(a){a.href='https://wa.me/'+CFG.wa+'?text='+encodeURIComponent('Hola '+CFG.nombre+', tengo una consulta sobre mis datos personales.');a.target='_blank';a.rel='noopener'});
+  var h=location.hash;if(h==='#politica-de-privacidad')show(P);if(h==='#libro-de-reclamaciones')show(R);if(h==='#terminos-y-condiciones'&&$('#lg-ter'))show($('#lg-ter'));
+
+  var f=$('#lg-form'),err=$('#lg-err'),done=$('#lg-done');
+  function key(){return 'lg-n-'+CFG.slug}
+  function next(){var n=1;try{n=(parseInt(localStorage.getItem(key()),10)||0)+1;localStorage.setItem(key(),String(n))}catch(e){n=Math.floor(Date.now()/1000)%10000}
+    var s='000'+n;return s.slice(-4)+'-'+new Date().getFullYear()}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();err.textContent='';
+    var v=function(n){return (f.elements[n]&&f.elements[n].value||'').trim()};
+    var need=[['nombre','tus nombres y apellidos'],['nd','el número de documento'],['dom','tu domicilio'],['tel','tu teléfono'],['em','tu correo'],['desc','la descripción del bien'],['detalle','el detalle'],['pedido','la solución que pides']];
+    for(var i=0;i<need.length;i++){if(!v(need[i][0])){err.textContent='Falta '+need[i][1]+'.';f.elements[need[i][0]].focus();return}}
+    if(v('td')==='DNI'&&!/^\d{8}$/.test(v('nd'))){err.textContent='El DNI debe tener 8 números.';f.elements.nd.focus();return}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(v('em'))){err.textContent='Escribe un correo válido, por ejemplo nombre@correo.com.';f.elements.em.focus();return}
+    if(v('monto')&&!/^\d+([.,]\d{1,2})?$/.test(v('monto'))){err.textContent='El monto debe ser un número, por ejemplo 45 o 45.50.';f.elements.monto.focus();return}
+    if(!$('#lg-ok').checked){err.textContent='Marca la casilla de declaración para continuar.';$('#lg-ok').focus();return}
+    var num=next(),fe=new Date().toLocaleDateString('es-PE',{day:'2-digit',month:'2-digit',year:'numeric'});
+    var bien=(f.querySelector('input[name=bien]:checked')||{}).value,tipo=(f.querySelector('input[name=tipo]:checked')||{}).value;
+    var t=['LIBRO DE RECLAMACIONES · HOJA N.° '+num,'Fecha: '+fe,'',
+      'PROVEEDOR','Razón social: '+CFG.razon,'RUC: '+CFG.ruc,'Dirección: '+CFG.dir,'Establecimiento: '+CFG.nombre,'',
+      'CONSUMIDOR','Nombre: '+v('nombre'),v('td')+': '+v('nd'),'Domicilio: '+v('dom'),'Teléfono: '+v('tel'),'Correo: '+v('em')]
+      .concat(v('ap')?['Madre, padre o apoderado: '+v('ap')]:[])
+      .concat(['','BIEN CONTRATADO',bien+': '+v('desc')],v('monto')?['Monto reclamado: S/ '+v('monto')]:[],
+      ['','TIPO: '+tipo.toUpperCase(),'Detalle: '+v('detalle'),'Pedido del consumidor: '+v('pedido')]);
+    var txt=t.join('\n');
+    $('#lg-num').textContent='Hoja N.° '+num;$('#lg-sum').textContent=txt;
+    $('#lg-send').href='https://wa.me/'+CFG.wa+'?text='+encodeURIComponent(txt);
+    f.hidden=true;done.hidden=false;$('.lg-b',R).scrollTop=0;
+  });
+  $('#lg-copy').addEventListener('click',function(){var b=this,t=$('#lg-sum').textContent;
+    var ok=function(){b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar texto'},1800)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){})}
+    else{var r=d.createRange();r.selectNodeContents($('#lg-sum'));var s=getSelection();s.removeAllRanges();s.addRange(r);ok()}});
+  $('#lg-new').addEventListener('click',function(){f.reset();f.hidden=false;done.hidden=true;err.textContent='';$('.lg-b',R).scrollTop=0});
+})();
+</script>
+<!-- LEGAL:FIN -->
+
+<!-- DEMO:INICIO -->
+<style>.dm-tag{position:fixed;left:max(16px,env(safe-area-inset-left));bottom:max(18px,env(safe-area-inset-bottom));z-index:2147482000;display:flex;align-items:center;gap:10px;background:#111;color:#fff;border-radius:99px;padding:7px 7px 7px 14px;font:700 13px/1.2 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;letter-spacing:0;box-shadow:0 10px 28px rgba(0,0,0,.28);max-width:calc(100vw - 100px)}
+.dm-tag b{background:#ffd23f;color:#3a2a00;border-radius:6px;padding:2px 7px;font-size:11px;letter-spacing:.08em}
+.dm-tag a{background:#fff;color:#111;text-decoration:none;border-radius:99px;padding:9px 14px;font-weight:800;white-space:nowrap}
+.dm-tag a:focus-visible{outline:2px solid #ffd23f;outline-offset:2px}
+@media(max-width:520px){.dm-tag span{display:none}}</style>
+<div class="dm-tag"><b>DEMO</b><span>Ejemplo para pizzería</span><a href="https://wa.me/51941614879?text=Hola%2C%20vi%20el%20demo%20y%20quiero%20esta%20p%C3%A1gina%20para%20mi%20negocio" target="_blank" rel="noopener">Quiero esta página</a></div>
+<!-- DEMO:FIN -->
+</body>
+</html>
